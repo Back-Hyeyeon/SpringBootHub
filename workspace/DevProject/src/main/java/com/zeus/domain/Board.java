@@ -3,25 +3,16 @@ package com.zeus.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
-@RequiredArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode(of = "boardNo")
+@Data
+/* @Builder */
 public class Board implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@NonNull
 	private int boardNo;
 	private String title;
 	private String content;

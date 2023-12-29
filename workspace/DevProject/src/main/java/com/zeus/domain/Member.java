@@ -1,22 +1,39 @@
 package com.zeus.domain;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
 public class Member {
 	
+	@NotBlank
+	@Size(min = 4)
 	private String userId;
 	private String password;
 	private String userName;
 	private String email;
-	private LocalDate dateOfBirth;
+	private String gender;
+	private String hobby;
+	private String[] hobbyArray;
+	private List<String> hobbyList;
+	private boolean foreigner;
+	private String developer;
+	private String nationality;
 	
 	private Address address;
 	private List<Card> cardList;
-	private String[] hobbyArray;
-	private String hobby;
-	private List<String> hobbyList;
+	
+	private String cars;
+	private String[] carArray;
+	private List<String> carList;
+	
+	private String introduction;
+	@DateTimeFormat(pattern = "yyyy-MM-dd") 
+	private Date dateOfBirth;
 }

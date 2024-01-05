@@ -20,12 +20,13 @@
 
 
 	<!-- Content Area -->
-	<h1>
-		<!-- 메시지 프로퍼티 파일로부터 메시지 내용을 읽어온다. -->
-		<spring:message code="common.homeWelcome" />
-	</h1>
-	<P>${serverTime}</P>
-	<hr>
+	<div align="center">
+		<h1>
+			<!-- 메시지 프로퍼티 파일로부터 메시지 내용을 읽어온다. -->
+			<spring:message code="common.homeWelcome" />
+		</h1>
+		<P>${serverTime}</P>
+	</div>
 	<!-- Footer Area -->
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
 

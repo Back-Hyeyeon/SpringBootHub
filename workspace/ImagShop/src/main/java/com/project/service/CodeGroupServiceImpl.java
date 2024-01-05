@@ -24,8 +24,15 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 	}
 	@Override
 	public CodeGroup read(String groupCode) throws Exception {
-		
 		return mapper.read(groupCode);
+	}
+	@Override
+	public void modify(CodeGroup codeGroup) throws Exception {
+		 mapper.update(codeGroup);
+	}
+	@Override
+	public void remove(String groupCode) throws Exception {
+		 mapper.delete(groupCode);		
 	}
 	
 	

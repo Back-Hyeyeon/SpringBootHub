@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
@@ -11,15 +13,16 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
-		var formObj = $("#codeGroup");
+		var formObj = $("#codeDetail");
 		$("#btnRegister").on("click", function() {
 			formObj.submit();
 		});
 		$("#btnList").on("click", function() {
-			self.location = "/codegroup/list";
+			self.location = "/codedetail/list";
 		});
 	});
 </script>
+
 
 </head>
 <body>
@@ -29,22 +32,28 @@
 	<%@ include file="/WEB-INF/views/common/menu.jsp"%>
 
 
-		<!-- Content Area -->
+	<!-- Content Area -->
 	<div align="center">
 		<h2>
-			<spring:message code="codegroup.header.register" />
+			<spring:message code="codedetail.header.register" />
 		</h2>
-		<form:form modelAttribute="codeGroup" action="/codegroup/register">
+		<form:form modelAttribute="codeDetail" action="/codedetail/register">
 			<table>
 				<tr>
-					<td><spring:message code="codegroup.groupCode" /></td>
-					<td><form:input path="groupCode" /></td>
+					<td><spring:message code="codedetail.groupCode" /></td>
+					<td><form:select path="groupCode" items="${groupCodeList}"
+							itemValue="value" itemLabel="label" /></td>
 					<td><font color="red"><form:errors path="groupCode" /></font></td>
 				</tr>
 				<tr>
-					<td><spring:message code="codegroup.groupName" /></td>
-					<td><form:input path="groupName" /></td>
-					<td><font color="red"><form:errors path="groupName" /></font></td>
+					<td><spring:message code="codedetail.codeValue" /></td>
+					<td><form:input path="codeValue" /></td>
+					<td><font color="red"><form:errors path="codeValue" /></font></td>
+				</tr>
+				<tr>
+					<td><spring:message code="codedetail.codeName" /></td>
+					<td><form:input path="codeName" /></td>
+					<td><font color="red"><form:errors path="codeName" /></font></td>
 				</tr>
 			</table>
 		</form:form>
@@ -57,7 +66,6 @@
 			</button>
 		</div>
 	</div>
-
 	<!-- Footer Area -->
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
 

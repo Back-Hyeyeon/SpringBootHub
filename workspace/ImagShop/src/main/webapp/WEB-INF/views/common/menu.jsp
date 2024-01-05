@@ -12,6 +12,12 @@
 					<spring:message code="menu.codegroup.list" />
 				</a>
 			</td>
+			<!-- 코드 관리를 메뉴에 추가한다. -->
+			<td width="120">
+				<a href="/codedetail/list">
+					<spring:message code="menu.codedetail.list" />
+				</a>
+			</td>
 		</tr>
 	</table>
 </div>

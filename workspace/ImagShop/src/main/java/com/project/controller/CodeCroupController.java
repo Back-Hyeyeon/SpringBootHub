@@ -46,4 +46,25 @@ public class CodeCroupController {
 		model.addAttribute(service.read(groupCode));
 	}
 
+	// 수정 페이지
+	@RequestMapping(value = "/modify", method = RequestMethod.GET)
+	public void modifyForm(String groupCode, Model model) throws Exception {
+		model.addAttribute(service.read(groupCode));
+	}
+
+	// 수정 처리
+	@RequestMapping(value = "/modify", method = RequestMethod.POST)
+	public String modify(CodeGroup codeGroup, RedirectAttributes rttr) throws Exception {
+		service.modify(codeGroup);
+		rttr.addFlashAttribute("msg", "SUCCESS");
+		return "redirect:/codegroup/list";
+	}
+	// 삭제 처리
+	@RequestMapping(value = "/remove", method = RequestMethod.POST)
+	public String remove(String groupCode, RedirectAttributes rttr) throws 
+	Exception {
+	service.remove(groupCode); 
+	rttr.addFlashAttribute("msg", "SUCCESS");
+	return "redirect:/codegroup/list";
+	}
 }

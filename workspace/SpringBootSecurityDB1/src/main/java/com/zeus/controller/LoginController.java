@@ -1,5 +1,6 @@
 package com.zeus.controller;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +9,7 @@ import lombok.extern.java.Log;
 
 @Log
 @Controller
+@MapperScan(basePackages = "com.project.mapper")
 public class LoginController {
 
 	@RequestMapping("/login")

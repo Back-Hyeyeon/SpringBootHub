@@ -11,7 +11,6 @@
 </head>
 <body>
 	<h1>로그인</h1>
-	<a href="/">HOME</a>
 	<h2>
 		<c:out value="${error}" />
 	</h2>

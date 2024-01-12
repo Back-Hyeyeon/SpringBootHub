@@ -19,4 +19,13 @@ public interface MemberMapper {
 	public void modifyAuth(MemberAuth memberAuth) throws Exception;
 	// 수정 처리
 	public void update(Member member) throws Exception;
+	// 삭제 처리
+	public void delete(int userNo) throws Exception;
+	// 권한 삭제
+	public void deleteAuth(int userNo) throws Exception;
+	// 회원 테이블의 데이터 건수 조회
+	public int countAll() throws Exception;
+	//사용자 아이디를 가진 회원 정보를 조회
+	public Member readByUserId(String userId);
+	
 }
